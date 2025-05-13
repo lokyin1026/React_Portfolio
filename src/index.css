@@ -1,1 +1,36 @@
 @import "tailwindcss" prefix(tw);
+
+/* Default light mode */
+:root, .light {
+  --background: #ffffff;
+  --text-color: #000000;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+}
+
+/* Dark mode */
+.dark {
+  --background: #1a1a1a;
+  --text-color: #ffffff;
+  --button-bg: #555555;
+  --button-text: #ffffff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}

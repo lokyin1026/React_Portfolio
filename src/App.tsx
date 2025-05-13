@@ -5,7 +5,6 @@ function App() {
 
   return (
     <>
-    <div className={`p-4 tw:text-8xl`}>asdasdasd</div>
       <TopBar></TopBar>
     </>
   )
