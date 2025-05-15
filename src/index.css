@@ -1,18 +1,18 @@
 @import "tailwindcss" prefix(tw);
 
-/* Default light mode */
-:root, .light {
-  --background: #ffffff;
-  --text-color: #000000;
-  --button-bg: #007bff;
+/* Dark mode */
+ :root, .dark {
+  --background: #1a1a1a;
+  --text-color: #a5a3b3;
+  --button-bg: #555555;
   --button-text: #ffffff;
 }
 
-/* Dark mode */
-.dark {
-  --background: #1a1a1a;
-  --text-color: #ffffff;
-  --button-bg: #555555;
+/* Default light mode */
+.light {
+  --background: #ffffff;
+  --text-color: #000000;
+  --button-bg: #007bff;
   --button-text: #ffffff;
 }
 

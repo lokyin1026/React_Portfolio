@@ -9,7 +9,7 @@ interface ThemeContextType {
 
 // Create context with default values
 export const ThemeContext = createContext<ThemeContextType>({
-  theme: 'light',
+  theme: 'dark',
   toggleTheme: () => {},
 });
 
@@ -20,8 +20,9 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<'light' | 'dark'>(
-    (localStorage.getItem('theme') as 'light' | 'dark') || 'light'
+    (localStorage.getItem('theme') as 'light' | 'dark') || 'dark'
   );
+  console.log(localStorage.getItem('theme'));
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
