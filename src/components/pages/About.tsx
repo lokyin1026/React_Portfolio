@@ -1,17 +1,22 @@
-import React from 'react';
-import map from '../../assets/map.png';
-import microservices from '../../assets/microservices.jpg';
-import database from '../../assets/database.jpg';
-import esri from '../../assets/esri.png';
-import uaf from '../../assets/uaf.jpg';
-import altech from '../../assets/altech.jpeg';
-import java from '../../assets/java.png';
-import nodejs from '../../assets/nodejs.png';
-import typescript from '../../assets/typescript.png';
-import react from '../../assets/react.png';
-import js from '../../assets/js.png';
-import python from '../../assets/python.png';
-import postgres from '../../assets/postgres.png';
+import React from "react";
+import map from "../../assets/map.png";
+import microservices from "../../assets/microservices.jpg";
+import database from "../../assets/database.jpg";
+import esri from "../../assets/esri.png";
+import uaf from "../../assets/uaf.jpg";
+import altech from "../../assets/altech.jpeg";
+import java from "../../assets/java.png";
+import nodejs from "../../assets/nodejs.png";
+import typescript from "../../assets/typescript.png";
+import react from "../../assets/react.png";
+import js from "../../assets/js.png";
+import python from "../../assets/python.png";
+import postgres from "../../assets/postgres.png";
+import mongo from "../../assets/mongo.png";
+import nestjs from "../../assets/nestjs.png";
+import oracle from "../../assets/oracle.png";
+import bootstrap from "../../assets/bootstrap.png";
+import "bootstrap-icons/font/bootstrap-icons.css"; // Ensure Bootstrap Icons CSS is imported
 
 // TypeScript interfaces for type safety
 interface Project {
@@ -31,27 +36,61 @@ interface Skill {
   alt: string;
 }
 
+interface Experience {
+  icon: string;
+  description: string;
+}
+
 // Metadata for projects, firms, and skills
 const projects: Project[] = [
-  { src: map, alt: 'Map Application', title: 'Map Application', description: 'Creating snapshots and 3D objects onto the map.' },
-  { src: microservices, alt: 'Microservices Development', title: 'Microservices Development', description: 'Creating multiservices to break down complex systems into manageable and independent components.' },
-  { src: database, alt: 'Database Project', title: 'Database Structure', description: 'Managing and optimizing data storage for efficient retrieval and processing.' },
+  {
+    src: map,
+    alt: "Map Application",
+    title: "Map Application",
+    description: "Creating snapshots and 3D objects onto the map.",
+  },
+  {
+    src: microservices,
+    alt: "Microservices Development",
+    title: "Microservices Development",
+    description:
+      "Creating multiservices to break down complex systems into manageable and independent components.",
+  },
+  {
+    src: database,
+    alt: "Database Project",
+    title: "Database Structure",
+    description:
+      "Managing and optimizing data storage for efficient retrieval and processing.",
+  },
 ];
 
 const firms: Firm[] = [
-  { src: esri, alt: 'Esri' },
-  { src: uaf, alt: 'UAF' },
-  { src: altech, alt: 'Altech' },
+  { src: esri, alt: "Esri" },
+  { src: uaf, alt: "UAF" },
+  { src: altech, alt: "Altech" },
 ];
 
 const skills: Skill[] = [
-  { src: java, alt: 'Java' },
-  { src: nodejs, alt: 'Node.js' },
-  { src: typescript, alt: 'TypeScript' },
-  { src: react, alt: 'React' },
-  { src: js, alt: 'JavaScript' },
-  { src: python, alt: 'Python' },
-  { src: postgres, alt: 'Postgres' },
+  { src: java, alt: "Java" },
+  { src: nodejs, alt: "NodeJs" },
+  { src: typescript, alt: "TypeScript" },
+  { src: react, alt: "React" },
+  { src: js, alt: "JavaScript" },
+  { src: python, alt: "Python" },
+  { src: postgres, alt: "Postgres" },
+  { src: mongo, alt: "Mongo" },
+  { src: nestjs, alt: "NestJs" },
+  { src: oracle, alt: "Oracle" },
+  { src: bootstrap, alt: "Bootstrap" },
+];
+
+const iconClasses: Experience[] = [
+  {
+    icon: "bi-terminal",
+    description:
+      "Used different framework to develop web pages. For backend, I have used JAVA springboot and NestJs to do data processing and communication with various systems. For frontend, I have used Angular, React, Vue to create user interface and data displaying.",
+  },
 ];
 
 export const About = () => {
@@ -79,7 +118,9 @@ export const About = () => {
             Nelson Ng Lok Yin
           </div>
           <div>
-            Hi! I'm a Software Developer with 2 - 3 years of experience working in various firms. Welcome to my online portfolio! Check out my previous experience and tech stack.
+            Hi! I'm a Software Developer with 2 - 3 years of experience working
+            in various firms. Welcome to my online portfolio! Check out my
+            previous experience and tech stack.
           </div>
         </div>
 
@@ -92,7 +133,9 @@ export const About = () => {
             Featured Projects
           </div>
           <div>
-            Brief intro goes here. My main experience lies in developing services and layout for different systems. And able to use different framework on different projects.
+            Brief intro goes here. My main experience lies in developing
+            services and layout for different systems. And able to use different
+            framework on different projects.
           </div>
           <div className="tw:flex tw:justify-around tw:mt-4">
             {projects.map((project, index) => (
@@ -144,7 +187,8 @@ export const About = () => {
               Skills & Experience
             </div>
             <div className="tw:mt-2">
-              Listed below are the proficiencies I am presently cultivating in both front-end and back-end disciplines.
+              Listed below are the proficiencies I am presently cultivating in
+              both front-end and back-end disciplines.
             </div>
             <div className="tw:mt-8 tw:flex tw:justify-evenly tw:flex-wrap">
               {skills.map((skill, index) => (
@@ -155,6 +199,14 @@ export const About = () => {
                     alt={skill.alt}
                     loading="lazy"
                   />
+                </div>
+              ))}
+            </div>
+            <div className="tw:mt-8 tw:flex tw:justify-evenly tw:flex-wrap">
+              {iconClasses.map((iconClass, index) => (
+                <div key={index} style={{ textAlign: "center" }}>
+                  <i className={`${iconClass.icon} tw:text-[24px]`}></i>
+                  <p>{iconClass.description}</p>
                 </div>
               ))}
             </div>
