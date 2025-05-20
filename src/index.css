@@ -3,17 +3,21 @@
 /* Dark mode */
  :root, .dark {
   --background: #1a1a1a;
-  --text-color: #a5a3b3;
+  --text-color: #a1b2c8;
   --button-bg: #555555;
   --button-text: #ffffff;
+  --div-color: #1a2a44;
+  --sub-title-color: #ffffff;
 }
 
 /* Default light mode */
 .light {
-  --background: #ffffff;
-  --text-color: #000000;
+  --background: #f4f7fa;
+  --text-color: #404b67;
   --button-bg: #007bff;
   --button-text: #ffffff;
+  --div-color: #ffffff;
+  --sub-title-color: #000000;
 }
 
 body {
@@ -33,4 +37,12 @@ button {
 
 button:hover {
   opacity: 0.9;
+}
+
+.div-bg {
+  background-color: var(--div-color);
+}
+
+.div-subtitle {
+  color: var(--sub-title-color);
 }

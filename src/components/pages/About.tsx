@@ -91,6 +91,11 @@ const iconClasses: Experience[] = [
     description:
       "Used different framework to develop web pages. For backend, I have used JAVA springboot and NestJs to do data processing and communication with various systems. For frontend, I have used Angular, React, Vue to create user interface and data displaying.",
   },
+  {
+    icon: "bi-terminal",
+    description:
+      "Used different framework to develop web pages. For backend, I have used JAVA springboot and NestJs to do data processing and communication with various systems. For frontend, I have used Angular, React, Vue to create user interface and data displaying.",
+  },
 ];
 
 export const About = () => {
@@ -104,15 +109,15 @@ export const About = () => {
 
       <div className="tw:text-center">
         {/* Profile Section */}
-        <div className="tw:bg-[#1a2a44] tw:p-14 tw:rounded-lg tw:max-w-[900px] tw:mx-auto tw:text-center tw:mt-12 tw:relative">
-          <div className="tw:bg-[#1a2a44] tw:rounded-full tw:mx-auto tw:w-30 tw:h-30 tw:absolute tw:left-[43.6%] tw:top-[-50px]"></div>
+        <div className="div-bg tw:p-14 tw:rounded-lg tw:max-w-[900px] tw:mx-auto tw:text-center tw:mt-12 tw:relative">
+          <div className="div-bg tw:rounded-full tw:mx-auto tw:w-30 tw:h-30 tw:absolute tw:left-[43.6%] tw:top-[-50px]"></div>
           <img
             src="https://imgv3.fotor.com/images/blog-cover-image/a-shadow-of-a-boy-carrying-the-camera-with-red-sky-behind.jpg"
             className="tw:w-24 tw:h-24 tw:rounded-full tw:mx-auto tw:mb-4 tw:object-cover tw:absolute tw:left-[45%] tw:top-[-40px]"
             alt="Profile"
           />
           <div
-            className="tw:text-2xl tw:mt-6 tw:mb-6 tw:font-extrabold tw:text-white"
+            className="div-subtitle tw:text-2xl tw:mt-6 tw:mb-6 tw:font-extrabold "
             style={{ fontFamily: "'Merriweather', serif" }}
           >
             Nelson Ng Lok Yin
@@ -125,9 +130,9 @@ export const About = () => {
         </div>
 
         {/* Projects Section */}
-        <div className="tw:bg-[#1a2a44] tw:p-14 tw:rounded-lg tw:max-w-[900px] tw:mx-auto tw:text-center tw:mt-12">
+        <div className="div-bg tw:p-14 tw:rounded-lg tw:max-w-[900px] tw:mx-auto tw:text-center tw:mt-12">
           <div
-            className="tw:text-2xl tw:mb-6 tw:font-extrabold tw:text-white"
+            className="div-subtitle tw:text-2xl tw:mb-6 tw:font-extrabold "
             style={{ fontFamily: "'Merriweather', serif" }}
           >
             Featured Projects
@@ -146,7 +151,7 @@ export const About = () => {
                   alt={project.alt}
                   loading="lazy"
                 />
-                <div className="tw:font-extrabold tw:text-left tw:text-xl tw:text-white tw:mt-2">
+                <div className="tw:font-extrabold tw:text-left tw:text-xl  tw:mt-2">
                   {project.title}
                 </div>
                 <div className="tw:text-left tw:mt-2">
@@ -158,9 +163,9 @@ export const About = () => {
         </div>
 
         {/* Firms Section */}
-        <div className="tw:bg-[#1a2a44] tw:p-14 tw:rounded-lg tw:max-w-[900px] tw:mx-auto tw:text-center tw:mt-12">
+        <div className="div-bg tw:p-14 tw:rounded-lg tw:max-w-[900px] tw:mx-auto tw:text-center tw:mt-12">
           <div
-            className="tw:text-2xl tw:mb-6 tw:font-extrabold tw:text-white"
+            className="div-subtitle tw:text-2xl tw:mb-6 tw:font-extrabold "
             style={{ fontFamily: "'Merriweather', serif" }}
           >
             Firms I Worked In
@@ -181,7 +186,7 @@ export const About = () => {
           {/* Skills Section */}
           <div className="tw:mt-6">
             <div
-              className="tw:text-2xl tw:mb-6 tw:font-extrabold tw:text-white"
+              className="div-subtitle tw:text-2xl tw:mb-6 tw:font-extrabold "
               style={{ fontFamily: "'Merriweather', serif" }}
             >
               Skills & Experience
