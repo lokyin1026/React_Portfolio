@@ -38,6 +38,7 @@ interface Skill {
 
 interface Experience {
   icon: string;
+  title: string;
   description: string;
 }
 
@@ -88,13 +89,21 @@ const skills: Skill[] = [
 const iconClasses: Experience[] = [
   {
     icon: "bi-terminal",
+    title: "Web Development",
     description:
-      "Used different framework to develop web pages. For backend, I have used JAVA springboot and NestJs to do data processing and communication with various systems. For frontend, I have used Angular, React, Vue to create user interface and data displaying.",
+      "Used different framework to develop web pages. Using JAVA springboot and NestJs to do data processing and communication with various systems. And used Angular, React, Vue to create user interface and data displaying.",
   },
   {
-    icon: "bi-terminal",
+    icon: "bi-database",
+    title: "Database Design",
     description:
-      "Used different framework to develop web pages. For backend, I have used JAVA springboot and NestJs to do data processing and communication with various systems. For frontend, I have used Angular, React, Vue to create user interface and data displaying.",
+      "Create schema for DB structure in different projects. For instance, building up a DB structure for trading account and application, revising the DB structure from the previous system and optimise it.",
+  },
+  {
+    icon: "bi-file-earmark-text",
+    title: "Reporting Create",
+    description:
+      "Create reports for displaying data to both external and internal users. Mainly used jasper studio and JS library such as Handlebars.",
   },
 ];
 
@@ -109,7 +118,7 @@ export const About = () => {
 
       <div className="tw:text-center">
         {/* Profile Section */}
-        <div className="div-bg tw:p-14 tw:rounded-lg tw:max-w-[900px] tw:mx-auto tw:text-center tw:mt-12 tw:relative">
+        <div className="div-bg tw:p-14 tw:rounded-lg tw:max-w-[1100px] tw:mx-auto tw:text-center tw:mt-12 tw:relative">
           <div className="div-bg tw:rounded-full tw:mx-auto tw:w-30 tw:h-30 tw:absolute tw:left-[43.6%] tw:top-[-50px]"></div>
           <img
             src="https://imgv3.fotor.com/images/blog-cover-image/a-shadow-of-a-boy-carrying-the-camera-with-red-sky-behind.jpg"
@@ -130,7 +139,7 @@ export const About = () => {
         </div>
 
         {/* Projects Section */}
-        <div className="div-bg tw:p-14 tw:rounded-lg tw:max-w-[900px] tw:mx-auto tw:text-center tw:mt-12">
+        <div className="div-bg tw:p-14 tw:rounded-lg tw:max-w-[1100px] tw:mx-auto tw:text-center tw:mt-12">
           <div
             className="div-subtitle tw:text-2xl tw:mb-6 tw:font-extrabold "
             style={{ fontFamily: "'Merriweather', serif" }}
@@ -163,7 +172,7 @@ export const About = () => {
         </div>
 
         {/* Firms Section */}
-        <div className="div-bg tw:p-14 tw:rounded-lg tw:max-w-[900px] tw:mx-auto tw:text-center tw:mt-12">
+        <div className="div-bg tw:p-14 tw:rounded-lg tw:max-w-[1100px] tw:mx-auto tw:text-center tw:mt-12">
           <div
             className="div-subtitle tw:text-2xl tw:mb-6 tw:font-extrabold "
             style={{ fontFamily: "'Merriweather', serif" }}
@@ -207,11 +216,13 @@ export const About = () => {
                 </div>
               ))}
             </div>
-            <div className="tw:mt-8 tw:flex tw:justify-evenly tw:flex-wrap">
+            <div className="tw:flex tw:justify-around tw:p-8">
               {iconClasses.map((iconClass, index) => (
-                <div key={index} style={{ textAlign: "center" }}>
-                  <i className={`${iconClass.icon} tw:text-[24px]`}></i>
-                  <p>{iconClass.description}</p>
+                <div key={index} className="tw:text-center tw:flex-1">
+                  <i
+                    className={`${iconClass.icon} tw:text-[24px] tw:border-2 tw:p-2 tw:overflow-hidden tw:rounded-full`}
+                  ></i>
+                  <div className="tw:mt-4">{iconClass.description}</div>
                 </div>
               ))}
             </div>
