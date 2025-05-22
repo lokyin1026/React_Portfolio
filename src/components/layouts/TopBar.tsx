@@ -1,6 +1,5 @@
 import { Button, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Skills } from "../pages/Skills";
 import { About } from "../pages/About";
 import { Projects } from "../pages/Projects";
 import { Contact } from "../pages/Contact";
@@ -15,8 +14,6 @@ function TopBar() {
     switch (activePage) {
       case "about":
         return <About />;
-      case "skills":
-        return <Skills />;
       case "projects":
         return <Projects />;
       case "contact":
@@ -40,9 +37,6 @@ function TopBar() {
         <div className="tw:inline-flex tw:gap-2">
           <Button color="inherit" onClick={() => setActivePage("about")}>
             About
-          </Button>
-          <Button color="inherit" onClick={() => setActivePage("skills")}>
-            Skills
           </Button>
           <Button color="inherit" onClick={() => setActivePage("projects")}>
             Projects

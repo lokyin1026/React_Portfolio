@@ -2,11 +2,11 @@
 
 /* Dark mode */
  :root, .dark {
-  --background: #1a1a1a;
+  --background: #18202e;
   --text-color: #a1b2c8;
   --button-bg: #555555;
   --button-text: #ffffff;
-  --div-color: #1a2a44;
+  --div-color: #1e2738;
   --sub-title-color: #ffffff;
 }
 
