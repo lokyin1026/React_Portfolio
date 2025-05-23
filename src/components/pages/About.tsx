@@ -6,6 +6,7 @@ import {
   skills,
   experiences,
 } from "../constants/PagesConstants";
+import Slider from "../layouts/Slider";
 
 export const About = () => {
   return (
@@ -37,24 +38,8 @@ export const About = () => {
             services and layout for different systems. And able to use different
             framework on different projects.
           </div>
-          <div className="tw:flex tw:justify-around tw:mt-4">
-            {projects.map((project, index) => (
-              <div key={index} className="tw:basis-1/3 tw:p-2">
-                <img
-                  src={project.src}
-                  className="tw:w-full tw:h-48 tw:object-cover tw:rounded-lg"
-                  alt={project.alt}
-                  loading="lazy"
-                />
-                <div className="tw:font-extrabold tw:text-left tw:text-xl  tw:mt-2">
-                  {project.title}
-                </div>
-                <div className="tw:text-left tw:mt-2">
-                  {project.description}
-                </div>
-              </div>
-            ))}
-          </div>
+          <Slider itemList={projects} />
+          <div></div>
         </div>
 
         {/* Firms Section */}

@@ -44,7 +44,7 @@ export const projects: Project[] = [
     src: map,
     alt: "Map Application",
     title: "Map Application",
-    description: "Creating snapshots and 3D objects onto the map.",
+    description: "Creating snapshots and 3D objects onto the map. Development on mobile apps and python batch jobs",
   },
   {
     src: microservices,

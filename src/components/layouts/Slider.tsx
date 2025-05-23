@@ -6,33 +6,23 @@ import { projects } from "../constants/PagesConstants";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Sample testimonial data
-const testimonials = [
-  {
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at erat vel quam cursus sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas est at lorem lacinia malesuada vel at arcu.",
-    author: "Sarah Doe, Project Manager at Revout",
-  },
-  {
-    quote:
-      "Another testimonial lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    author: "John Smith, Developer at TechCorp",
-  },
-];
 
 interface ArrowProps {
-  onClick?: () => void; // onClick is a function that takes no arguments and returns void
+  onClick?: () => void;
 }
 
-// Custom arrow components for the slider
 const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
   <IconButton
-    onClick={onClick}
+    onClick={() => {
+      console.log("PrevArrow clicked");
+      onClick?.();
+    }}
     sx={{
       position: "absolute",
       left: 10,
       top: "50%",
       transform: "translateY(-50%)",
+      zIndex: 9999,
     }}
   >
     <ArrowBackIcon sx={{ color: "#fff" }} />
@@ -47,6 +37,7 @@ const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
       right: 10,
       top: "50%",
       transform: "translateY(-50%)",
+      zIndex: 9999,
     }}
   >
     <ArrowForwardIcon sx={{ color: "#fff" }} />
@@ -57,7 +48,7 @@ interface SliderItems {
   itemList: any[];
 }
 
-const TestimonialSlider: React.FC<SliderItems> = ({ itemList }) => {
+const ItemSlider: React.FC<SliderItems> = ({ itemList }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -75,10 +66,22 @@ const TestimonialSlider: React.FC<SliderItems> = ({ itemList }) => {
           borderRadius: "50%",
           display: "inline-block",
           mx: 0.5,
+          "&.slick-active": {},
         }}
       />
     ),
     dotsClass: "slick-dots custom-dots",
+    appendDots: (dots: React.ReactNode) => (
+      <Box
+        sx={{
+          "& .slick-active > div": {
+            backgroundColor: "#90CAF9",
+          },
+        }}
+      >
+        {dots}
+      </Box>
+    ),
   };
 
   return (
@@ -88,7 +91,7 @@ const TestimonialSlider: React.FC<SliderItems> = ({ itemList }) => {
           <Box key={index} sx={{ textAlign: "center", px: 4 }}>
             <img
               src={item.src}
-              className="tw:w-[38%] tw:object-cover tw:rounded-lg tw:block tw:mx-auto"
+              className="tw:w-[30%] tw:object-cover tw:rounded-lg tw:block tw:mx-auto"
               loading="lazy"
             />
             <Typography
@@ -107,4 +110,4 @@ const TestimonialSlider: React.FC<SliderItems> = ({ itemList }) => {
   );
 };
 
-export default TestimonialSlider;
+export default ItemSlider;
