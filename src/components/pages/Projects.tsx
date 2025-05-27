@@ -1,6 +1,7 @@
-import { Intro } from "../layouts/Intro";
+import { Page } from "../layouts/Page";
 import { projects } from "../constants/PagesConstants";
-import Slider from "../layouts/Slider";
+import { Divbox } from "../layouts/Divbox";
+import { Typography } from "@mui/material";
 
 export const Projects = () => {
   return (
@@ -11,13 +12,48 @@ export const Projects = () => {
         `}
       </style>
       <div className="tw:text-center">
-        <Intro
+        <Page
           name="Nelson Ng Lok Yin"
           description="Intro about projects goes here, following are the details of all projects that I have involved in it previously."
+          childrenSlot={() => (
+            <>
+              <Divbox
+                childrenSlot={() => (
+                  <>
+                    {projects.map((project, index) => (
+                      <div key={index} className="tw:flex tw:mb-10">
+                        <div className="tw:max-w-[40%] tw:aspect-[16/9] tw-relative tw-rounded-lg tw-overflow-hidden tw:p-2">
+                          <img
+                            src={project.src}
+                            className="tw:w-full tw:h-full tw-object-cover tw-rounded-lg"
+                            alt={project.alt}
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="tw:block tw:text-left tw:p-2">
+                          <Typography
+                            variant="h6"
+                            sx={{
+                              color: "white",
+                              fontStyle: "italic",
+                              mb: 2,
+                            }}
+                          >
+                            {project.title}
+                          </Typography>
+                          <Typography variant="body1">
+                            {project.description}
+                          </Typography>
+                          <div></div>
+                        </div>
+                      </div>
+                    ))}
+                  </>
+                )}
+              />
+            </>
+          )}
         />
-        <div className="div-bg tw:rounded-lg tw:max-w-[1100px] tw:mx-auto tw:text-center tw:mt-12">
-          <Slider itemList={projects} />
-        </div>
       </div>
     </>
   );

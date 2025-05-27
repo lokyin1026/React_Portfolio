@@ -1,6 +1,7 @@
 import map from "../../assets/map.png";
 import microservices from "../../assets/microservices.jpg";
-import database from "../../assets/database.jpg";
+import jasper from "../../assets/jasper.png";
+import database from "../../assets/database.png";
 import esri from "../../assets/esri.png";
 import uaf from "../../assets/uaf.jpg";
 import altech from "../../assets/altech.jpeg";
@@ -44,14 +45,15 @@ export const projects: Project[] = [
     src: map,
     alt: "Map Application",
     title: "Map Application",
-    description: "Creating snapshots and 3D objects onto the map. Development on mobile apps and python batch jobs",
+    description:
+      "Creating snapshots and 3D objects onto the map. Development on mobile apps and python batch jobs",
   },
   {
-    src: microservices,
-    alt: "Microservices Development",
-    title: "Microservices Development",
+    src: jasper,
+    alt: "Reporting Development/Migration",
+    title: "Reporting Development/Migration",
     description:
-      "Creating multiservices to break down complex systems into manageable and independent components.",
+      "Migrating from Oracle report to JAVA version. Also creating new report for internal users to view data.",
   },
   {
     src: database,

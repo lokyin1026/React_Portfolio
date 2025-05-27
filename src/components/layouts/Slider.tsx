@@ -1,11 +1,10 @@
 import Slider from "react-slick";
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography, IconButton, Link } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { projects } from "../constants/PagesConstants";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 interface ArrowProps {
   onClick?: () => void;
@@ -60,13 +59,11 @@ const ItemSlider: React.FC<SliderItems> = ({ itemList }) => {
     customPaging: () => (
       <Box
         sx={{
-          width: 10,
-          height: 10,
+          width: 7,
+          height: 7,
           backgroundColor: "grey.500",
           borderRadius: "50%",
           display: "inline-block",
-          mx: 0.5,
-          "&.slick-active": {},
         }}
       />
     ),
@@ -77,6 +74,7 @@ const ItemSlider: React.FC<SliderItems> = ({ itemList }) => {
           "& .slick-active > div": {
             backgroundColor: "#90CAF9",
           },
+          marginBottom: -2,
         }}
       >
         {dots}
@@ -85,13 +83,19 @@ const ItemSlider: React.FC<SliderItems> = ({ itemList }) => {
   };
 
   return (
-    <Box sx={{ py: 4, position: "relative" }}>
+    <Box
+      sx={{
+        py: 4,
+        position: "relative",
+        paddingBottom: 0,
+      }}
+    >
       <Slider {...settings}>
         {itemList.map((item, index) => (
-          <Box key={index} sx={{ textAlign: "center", px: 4 }}>
+          <Box key={index} sx={{ textAlign: "center" }}>
             <img
               src={item.src}
-              className="tw:w-[30%] tw:object-cover tw:rounded-lg tw:block tw:mx-auto"
+              className="tw:max-w-[50%] tw:aspect-[16/9] tw:object-cover tw:rounded-lg tw:block tw:mx-auto"
               loading="lazy"
             />
             <Typography
@@ -103,6 +107,14 @@ const ItemSlider: React.FC<SliderItems> = ({ itemList }) => {
             <Typography variant="body2" sx={{ color: "#90CAF9" }}>
               {item.description}
             </Typography>
+            <Link
+              href="#"
+              underline="hover"
+              sx={{ display: "block", marginTop: 1 }}
+            >
+              {"View more"}
+              <span className={`bi bi-arrow-right tw:ml-1`}></span>
+            </Link>
           </Box>
         ))}
       </Slider>
