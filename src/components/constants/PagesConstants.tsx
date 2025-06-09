@@ -16,12 +16,14 @@ import mongo from "../../assets/mongo.png";
 import nestjs from "../../assets/nestjs.png";
 import oracle from "../../assets/oracle.png";
 import bootstrap from "../../assets/bootstrap.png";
+import springboot from "../../assets/springboot.png"
 
 interface Project {
   src: string;
   alt: string;
   title: string;
   description: string;
+  stacks: Array<string>;
 }
 
 interface Firm {
@@ -47,6 +49,7 @@ export const projects: Project[] = [
     title: "Map Application",
     description:
       "Creating snapshots and 3D objects onto the map. Development on mobile apps and python batch jobs",
+    stacks: [python, java, typescript, js, bootstrap, react], 
   },
   {
     src: jasper,
@@ -54,14 +57,16 @@ export const projects: Project[] = [
     title: "Reporting Development/Migration",
     description:
       "Migrating from Oracle report to JAVA version. Also creating new report for internal users to view data.",
-  },
+    stacks: [oracle, java, springboot, typescript, bootstrap]
+    },
   {
     src: database,
     alt: "Database Project",
     title: "Database Structure",
     description:
       "Managing and optimizing data storage for efficient retrieval and processing.",
-  },
+    stacks: [nodejs, java, springboot, nestjs, postgres, mongo]
+    },
 ];
 
 export const firms: Firm[] = [
@@ -82,6 +87,7 @@ export const skills: Skill[] = [
   { src: nestjs, alt: "NestJs" },
   { src: oracle, alt: "Oracle" },
   { src: bootstrap, alt: "Bootstrap" },
+  { src: springboot, alt: "Springboot" }
 ];
 
 export const experiences: Experience[] = [

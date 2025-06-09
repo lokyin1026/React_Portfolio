@@ -110,7 +110,7 @@ const ItemSlider: React.FC<SliderItems> = ({ itemList }) => {
             <Link
               href="#"
               underline="hover"
-              sx={{ display: "block", marginTop: 1 }}
+              sx={{ display: "block", marginTop: 1, fontWeight: 'bold' }}
             >
               {"View more"}
               <span className={`bi bi-arrow-right tw:ml-1`}></span>

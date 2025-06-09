@@ -1,7 +1,7 @@
 import { Page } from "../layouts/Page";
 import { projects } from "../constants/PagesConstants";
 import { Divbox } from "../layouts/Divbox";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export const Projects = () => {
   return (
@@ -31,20 +31,24 @@ export const Projects = () => {
                           />
                         </div>
                         <div className="tw:block tw:text-left tw:p-2">
-                          <Typography
-                            variant="h6"
-                            sx={{
-                              color: "white",
-                              fontStyle: "italic",
-                              mb: 2,
-                            }}
-                          >
-                            {project.title}
+                          <Typography component="div">
+                            <div
+                              className="tw:text-3xl tw:italic tw:mb-4 div-subtitle"
+                            >
+                              {project.title}
+                            </div>
+                            <Box sx={{ fontSize: 16, mb: 2 }}>
+                              {project.description}
+                            </Box>
+                            <Box sx={{ fontSize: 16 }}>
+                              {"Tech Stack:"}
+                            </Box>
+                            <div className="tw:flex tw:mt-1">
+                              {project.stacks.map((stack) => (
+                                <img className="tw:h-[40px] tw:w-auto tw:p-1" src={stack} />
+                              ))}
+                            </div>
                           </Typography>
-                          <Typography variant="body1">
-                            {project.description}
-                          </Typography>
-                          <div></div>
                         </div>
                       </div>
                     ))}
